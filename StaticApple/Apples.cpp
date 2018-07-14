@@ -20,4 +20,6 @@ void Apples::Print()
 
 Apples::~Apples()
 {
+	s_Amount--;
+	s_sumWeight = s_sumWeight - weight;
 }

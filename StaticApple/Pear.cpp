@@ -20,4 +20,6 @@ void Pear::Print()
 
 Pear::~Pear()
 {
+	s_Amount--;
+	s_sumWeight = s_sumWeight - weight;
 }
