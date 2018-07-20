@@ -15,7 +15,7 @@ Pear::Pear(int weight, std::string colour)
 
 void Pear::Print()
 {
-	printf("There are %d %s %s %d %s", s_Amount, colour.c_str(), "pears, weighing", s_sumWeight, "gramms.\n");
+	printf("There are %d %s %d %s", s_Amount, "pears, weighing", s_sumWeight, "gramms.\n");
 }
 
 Pear::~Pear()

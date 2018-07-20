@@ -14,7 +14,7 @@ Fruit::Fruit(int weight, std::string colour)
 
 void Fruit::Print()
 {
-	//printf("In total, there are %d %s", s_Amount, "fruit(s).");
+	std::cout << "Default output." << std::endl;
 }
 
 Fruit::~Fruit()

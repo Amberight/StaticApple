@@ -9,6 +9,6 @@ private:
 	std::string colour;
 public:
 	Apples(int x = 0, std::string y = "NA");
-	void Print();
+	static void Print();
 	~Apples();
 };

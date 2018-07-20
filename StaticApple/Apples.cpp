@@ -13,9 +13,9 @@ Apples::Apples(int weight, std::string colour)
 	s_sumWeight = s_sumWeight + weight;
 }
 
-void Apples::Print()
+ void Apples::Print()
 {
-	printf("There are %d %s %s %d %s", s_Amount, colour.c_str(), "apples, weighing", s_sumWeight, "gramms.\n");
+	printf("There are %d %s %d %s", s_Amount, /*colour.c_str(),*/ "apples, weighing", s_sumWeight, "gramms.\n");
 }
 
 Apples::~Apples()

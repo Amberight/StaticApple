@@ -11,11 +11,11 @@ int main()
 	Fruit *Apl3 = new Apples(254, "red");
 	Fruit *Pr1 = new Pear(159, "yellow");
 	Fruit *Pr2 = new Pear(189, "yellow");
-	
-	Apl1->Print();
-	Pr1->Print();
+
+	Apples::Print();
+	Pear::Print();
 	delete Apl3;
-	Apl1->Print();
+	Apples::Print();
 
 	return 0;
 }
