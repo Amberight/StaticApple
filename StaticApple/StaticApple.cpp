@@ -6,13 +6,14 @@
 
 int main()
 {
-	Apples *Apl1 = new Apples(212, "red");
-	Apples *Apl2 = new Apples(130, "green");
-	Apples *Apl3 = new Apples(254, "red");
-	Pear *Pear1 = new Pear(159, "yellow");
-	Pear *Pear2 = new Pear(189, "yellow");
+	Fruit *Apl1 = new Apples(212, "red");
+	Fruit *Apl2 = new Apples(130, "green");
+	Fruit *Apl3 = new Apples(254, "red");
+	Fruit *Pr1 = new Pear(159, "yellow");
+	Fruit *Pr2 = new Pear(189, "yellow");
 	
 	Apl1->Print();
+	Pr1->Print();
 	delete Apl3;
 	Apl1->Print();
 
