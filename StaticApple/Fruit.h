@@ -13,4 +13,3 @@ public:
 	virtual void Print()=0;
 	~Fruit();
 };
-
