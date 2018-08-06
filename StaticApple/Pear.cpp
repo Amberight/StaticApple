@@ -18,6 +18,11 @@ void Pear::Print()
 	printf("There are %d %s %d %s", s_Amount, "pears, weighing", s_sumWeight, "gramms.\n");
 }
 
+void Pear::showInfo()
+{
+	printf("This pear is %s %s %d %s ", colour.c_str(), " and weighs ", weight, "\n");
+}
+
 Pear::~Pear()
 {
 	s_Amount--;

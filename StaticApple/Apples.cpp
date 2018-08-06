@@ -15,7 +15,12 @@ Apples::Apples(int weight, std::string colour)
 
  void Apples::Print()
 {
-	printf("There are %d %s %d %s", s_Amount, /*colour.c_str(),*/ "apples, weighing", s_sumWeight, "gramms.\n");
+	printf("There are %d %s %d %s", s_Amount, "apples, weighing", s_sumWeight, "gramms.\n");
+}
+
+void Apples::showInfo()
+{
+	printf("This apple is %s %s %d %s ", colour.c_str(), " and weighs ", weight, "\n");
 }
 
 Apples::~Apples()
