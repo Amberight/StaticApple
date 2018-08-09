@@ -55,8 +55,6 @@ void Apples::ReadFile()
 
 		std::getline(file, tempW);
 		std::getline(file, tempC);
-		//weight = std::stoi(tempW);
-		//colour = tempC;
 		Apples::changeValues(std::stoi(tempW), tempC);
 		printf("Object loaded succesfully\n");
 	}
