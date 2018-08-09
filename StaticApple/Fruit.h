@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include <fstream>
 
 class Fruit
 {
@@ -12,7 +13,7 @@ public:
 	Fruit(int x = 0, std::string y = "NA");
 	void Print();
 	void showInfo();
-	static void SaveFile(Fruit *ob);
-	static void ReadFile(Fruit *ob);
+	void SaveFile();
+	void ReadFile();
 	virtual ~Fruit();
 };

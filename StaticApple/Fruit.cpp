@@ -4,6 +4,7 @@
 #include <cstdio>
 #include <fstream>
 #include <cstring>
+#include <string>
 
 static  int s_Amount = 0;
 
@@ -19,33 +20,12 @@ void Fruit::Print()
 	printf("Default output\n");
 }
 
-void Fruit::SaveFile(Fruit *ob)
+void Fruit::SaveFile()
 {
-	std::fstream file("object.bin", std::ios::binary | std::ios::in | std::ios::out | std::ios::trunc);
-	if (!file.is_open())
-	{
-		printf("Error reading file\n");
-	}
-	else
-	{
-		file.write((char *)&ob, sizeof(Fruit));
-		file.seekg(0);
-		printf("Object saved succsefully\n");
-	}
 }
 
-void Fruit::ReadFile(Fruit *ob)
+void Fruit::ReadFile()
 {
-	std::ifstream file("object.bin", std::ios::binary | std::ios::in);
-	if (!file.is_open())
-	{
-		printf("Error reading file\n");
-	}
-	else
-	{
-		file.read((char *)&ob, sizeof(Fruit));
-		printf("Object copied succsefully\n");
-	}
 }
 
 void Fruit::showInfo()
