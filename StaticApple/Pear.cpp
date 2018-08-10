@@ -5,12 +5,22 @@
 static int s_Amount = 0;
 static int s_sumWeight = 0;
 
-Pear::Pear(int weight, std::string colour)
+Pear::Pear(int wei, std::string col)
 {
 	s_Amount++;
-	this->weight = weight;
-	this->colour = colour;
-	s_sumWeight = s_sumWeight + weight;
+	this->weight = wei;
+	this->colour = col;
+	s_sumWeight = s_sumWeight + wei;
+}
+
+void Pear::setWeight(int x)
+{
+	this->weight = x;
+}
+
+void Pear::setColour(std::string y)
+{
+	this->colour = y;
 }
 
 void Pear::Print()

@@ -8,11 +8,11 @@
 
 static  int s_Amount = 0;
 
-Fruit::Fruit(int weight, std::string colour)
+Fruit::Fruit(int wei, std::string col)
 {
 	s_Amount++;
-	this->weight = weight;
-	this->colour = colour;
+	this->weight = wei;
+	this->colour = col;
 }
 
 void Fruit::Print()
@@ -30,7 +30,6 @@ void Fruit::ReadFile()
 
 void Fruit::showInfo()
 {
-
 }
 
 Fruit::~Fruit()
