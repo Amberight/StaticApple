@@ -13,6 +13,16 @@ Apples::Apples(int wei, std::string col)
 	s_sumWeight = s_sumWeight + wei;
 }
 
+int Apples::getWei()
+{
+	return weight;
+}
+
+std::string Apples::getCol()
+{
+	return colour;
+}
+
 void Apples::setWeight(int x)
 {
 	this->weight = x;

@@ -20,6 +20,16 @@ void Fruit::Print()
 	printf("Default output\n");
 }
 
+int Fruit::getWei()
+{
+	return weight;
+}
+
+std::string Fruit::getCol()
+{
+	return colour;
+}
+
 void Fruit::SaveFile()
 {
 }

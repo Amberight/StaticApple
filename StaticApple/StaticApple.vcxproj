@@ -80,6 +80,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Apples.h" />
+    <ClInclude Include="Basket.h" />
     <ClInclude Include="Fruit.h" />
     <ClInclude Include="Pear.h" />
     <ClInclude Include="stdafx.h" />
@@ -87,6 +88,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Apples.cpp" />
+    <ClCompile Include="Basket.cpp" />
     <ClCompile Include="Fruit.cpp" />
     <ClCompile Include="Pear.cpp" />
     <ClCompile Include="StaticApple.cpp" />

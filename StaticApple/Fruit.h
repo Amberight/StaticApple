@@ -12,8 +12,10 @@ private:
 public:
 	Fruit(int x = 0, std::string y = "NA");
 	void Print();
-	void showInfo();
-	void SaveFile();
-	void ReadFile();
+	virtual int getWei();
+	virtual std::string getCol();
+	virtual void showInfo();
+	virtual void SaveFile();
+	virtual void ReadFile();
 	virtual ~Fruit();
 };

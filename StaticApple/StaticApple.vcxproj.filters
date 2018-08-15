@@ -33,6 +33,9 @@
     <ClInclude Include="Pear.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Basket.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -48,6 +51,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Pear.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Basket.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

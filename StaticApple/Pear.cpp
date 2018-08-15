@@ -13,6 +13,16 @@ Pear::Pear(int wei, std::string col)
 	s_sumWeight = s_sumWeight + wei;
 }
 
+int Pear::getWei()
+{
+	return weight;
+}
+
+std::string Pear::getCol()
+{
+	return colour;
+}
+
 void Pear::setWeight(int x)
 {
 	this->weight = x;
