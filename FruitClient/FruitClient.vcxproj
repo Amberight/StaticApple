@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{3D011DE4-876F-46A8-B40A-B0FFF5A2E7D9}</ProjectGuid>
+    <ProjectGuid>{58C0DAA4-F97A-448E-9668-DE104AB16DAD}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>FruitClient</RootNamespace>
   </PropertyGroup>

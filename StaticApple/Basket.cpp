@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "Basket.h"
+#include <fstream>
 
 int fruit_count;
 
@@ -10,6 +11,7 @@ Basket::Basket()
 
 void Basket::BasketPrime()
 {
+	int n;
 	serverSetup();
 }
 

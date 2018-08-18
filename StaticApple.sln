@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StaticApple", "StaticApple\StaticApple.vcxproj", "{C8494A18-FF6C-46AE-8217-CFC72A7482CA}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FruitClient", "FruitClient\FruitClient.vcxproj", "{58C0DAA4-F97A-448E-9668-DE104AB16DAD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -15,6 +17,10 @@ Global
 		{C8494A18-FF6C-46AE-8217-CFC72A7482CA}.Debug|Win32.Build.0 = Debug|Win32
 		{C8494A18-FF6C-46AE-8217-CFC72A7482CA}.Release|Win32.ActiveCfg = Release|Win32
 		{C8494A18-FF6C-46AE-8217-CFC72A7482CA}.Release|Win32.Build.0 = Release|Win32
+		{58C0DAA4-F97A-448E-9668-DE104AB16DAD}.Debug|Win32.ActiveCfg = Debug|Win32
+		{58C0DAA4-F97A-448E-9668-DE104AB16DAD}.Debug|Win32.Build.0 = Debug|Win32
+		{58C0DAA4-F97A-448E-9668-DE104AB16DAD}.Release|Win32.ActiveCfg = Release|Win32
+		{58C0DAA4-F97A-448E-9668-DE104AB16DAD}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
