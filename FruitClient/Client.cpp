@@ -5,7 +5,7 @@
 Client::Client()
 {
 	char response;
-	printf("\nEstablish connection? y/n");
+	printf("\nEstablish connection? y/n ");
 	std::cin >> response;
 
 	if (response == 'y')

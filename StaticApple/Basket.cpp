@@ -3,6 +3,7 @@
 #include <fstream>
 
 int fruit_count;
+std::vector<Fruit *> basketVec;
 
 Basket::Basket()
 {
@@ -17,8 +18,8 @@ void Basket::BasketPrime()
 
 void Basket::fruitBasket()
 {
-	std::vector<Fruit *> basketVec;
-	fillBasket(basketVec);
+	//std::vector<Fruit *> basketVec;
+	//fillBasket(basketVec);
 }
 
 void Basket::fillBasket(std::vector<Fruit *> & tempVec)
@@ -63,48 +64,99 @@ void Basket::serverSetup()
 	int(AddressSize) = sizeof(ADDRESS);
 
 	SOCKET sock_Listen;
-	SOCKET sock_Connection;
+	SOCKET sock_Connection1;
+	SOCKET sock_Connection2;
+	SOCKET sock_Connection3;
 
-	sock_Connection = socket(AF_INET, SOCK_STREAM, NULL);
+	sock_Connection1 = socket(AF_INET, SOCK_STREAM, NULL);
+	sock_Connection2 = socket(AF_INET, SOCK_STREAM, NULL);
+	sock_Connection3 = socket(AF_INET, SOCK_STREAM, NULL);
+
+
 	ADDRESS.sin_addr.s_addr = inet_addr("127.0.0.1");
 	ADDRESS.sin_family = AF_INET;
 	ADDRESS.sin_port = htons(444);
 
 	sock_Listen = socket(AF_INET, SOCK_STREAM, NULL);
 	bind(sock_Listen, (SOCKADDR*)&ADDRESS, sizeof(ADDRESS));
-	listen(sock_Listen, SOMAXCONN);
+	listen(sock_Listen, 3);
 
-	std::vector<Fruit *> basketVec;
 	fillBasket(basketVec);
 
 	for (;;)
 	{
 		printf("\n\tWaiting for connection... ");
-		if (sock_Connection = accept(sock_Listen, (SOCKADDR*)&ADDRESS, &AddressSize));
+		if (sock_Connection1 = accept(sock_Listen, (SOCKADDR*)&ADDRESS, &AddressSize));
 		{
 			printf("\n\tConnection found! \n");
 
-			SUCCESSFUL = recv(sock_Connection, tempAdr, sizeof(tempAdr), NULL);
+			SUCCESSFUL = recv(sock_Connection1, tempAdr, sizeof(tempAdr), NULL);
 			clientAdr = tempAdr;
-			SUCCESSFUL = recv(sock_Connection, tempPort, sizeof(tempPort), NULL);
+			SUCCESSFUL = recv(sock_Connection1, tempPort, sizeof(tempPort), NULL);
 			clientPort = tempPort;
 			std::cout << "Client address: " << clientAdr << ", client port: "<<  clientPort << std::endl;
 			
 			printf("\nCommencing fruit transfer.");
 
-			for (;;)
-			{
-				int i = (rand() % fruit_count);
-				std::string transWei = std::to_string(basketVec[i]->getWei());
-				std::string transCol = basketVec[i]->getCol();
-
-				SUCCESSFUL = send(sock_Connection, transWei.c_str(), 20, NULL);
-				SUCCESSFUL = send(sock_Connection, transCol.c_str(), 20, NULL);
-
-				Sleep(30000);
-			}
-
+			std::thread first(&Basket::throwBasket, sock_Connection1);
+			first.detach();
+			break;
 		}
+	}
+	for (;;)
+	{
+		printf("\n\tWaiting for connection... ");
+		if (sock_Connection2 = accept(sock_Listen, (SOCKADDR*)&ADDRESS, &AddressSize));
+		{
+			printf("\n\tConnection found! \n");
+
+			SUCCESSFUL = recv(sock_Connection2, tempAdr, sizeof(tempAdr), NULL);
+			clientAdr = tempAdr;
+			SUCCESSFUL = recv(sock_Connection2, tempPort, sizeof(tempPort), NULL);
+			clientPort = tempPort;
+			std::cout << "Client address: " << clientAdr << ", client port: " << clientPort << std::endl;
+
+			printf("\nCommencing fruit transfer.");
+
+			std::thread second(&Basket::throwBasket, sock_Connection2);
+			second.detach();
+			break;
+		}
+	}
+	for (;;)
+	{
+		printf("\n\tWaiting for connection... ");
+		if (sock_Connection3 = accept(sock_Listen, (SOCKADDR*)&ADDRESS, &AddressSize));
+		{
+			printf("\n\tConnection found! \n");
+
+			SUCCESSFUL = recv(sock_Connection3, tempAdr, sizeof(tempAdr), NULL);
+			clientAdr = tempAdr;
+			SUCCESSFUL = recv(sock_Connection3, tempPort, sizeof(tempPort), NULL);
+			clientPort = tempPort;
+			std::cout << "Client address: " << clientAdr << ", client port: " << clientPort << std::endl;
+
+			printf("\nCommencing fruit transfer.");
+
+			std::thread third(&Basket::throwBasket, sock_Connection3);
+			third.detach();
+			break;
+		}
+	}
+}
+
+void Basket::throwBasket(SOCKET &S)
+{
+	for (;;)
+	{
+		int i = (rand() % fruit_count);
+		std::string transWei = std::to_string(basketVec[i]->getWei());
+		std::string transCol = basketVec[i]->getCol();
+		int result;
+		result = send(S, transWei.c_str(), 20, NULL);
+		result = send(S, transCol.c_str(), 20, NULL);
+
+		Sleep(3000);
 	}
 }
 

@@ -12,6 +12,7 @@
 #include "Pear.h"
 #include "time.h"
 #include <random>
+#include <thread>
 
 #define SCK_VERSION2 0x0202
 
@@ -20,7 +21,7 @@ class Basket
 private:
 	void serverSetup();
 	void fruitBasket();
-	void throwBasket();
+	static void throwBasket(SOCKET &S);
 	void fillBasket(std::vector<Fruit *> & vector);
 public:
 	Basket();
